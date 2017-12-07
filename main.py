@@ -49,7 +49,12 @@ if __name__ == "__main__":
             least_mse = mse
 
     if selected_grn:
-        nx.draw(selected_grn)
+        print(nx.to_numpy_matrix(selected_grn.graph))
+        pred = nx.predecessor(selected_grn.graph,'eda',cutoff=1)
+        print(pred)
+        pred = util.extract_list_from_dict(pred)
+        print(pred)
+        nx.draw(selected_grn.graph,with_labels=True)
         plt.draw()
         plt.show()
         print("yeah we found a grn")
