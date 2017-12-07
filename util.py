@@ -26,7 +26,7 @@ def extract_testing_data(original_expression, percent):
 
 
 def load_gene_list(expression_data):
-    return list(expression_data.columns.values)[1:]
+    return list(expression_data.columns.values)[:]
 
 
 def train_grn(grn, training_data):
@@ -57,6 +57,7 @@ def train_grn(grn, training_data):
 
             # get the target genes expression at this time point
             target_gene_expression = training_column[target_gene_index]
+            target_gene_prev_expression = prev_training_column[target_gene_index]
 
             # get the bias for this gene
             bias = bias_matrix[target_gene_index]
@@ -101,14 +102,149 @@ def train_grn(grn, training_data):
                 # update the invariant
                 regulator_gene_index = regulator_gene_index + 1
 
+            # lower bound and upper bound matrices for bapso
+            lower_bound = np.zeros((regulator_gene_count + 1,1))
+            lower_bound.fill(-1)
+            upper_bound = np.ones((regulator_gene_count + 1,1))
 
-        # start the training
+            # start the training
+            optimized_matrix = run_bapso(optimization_matrix,
+                                        upper_bound,
+                                        lower_bound,
+                                        target_gene_expression,
+                                        target_gene_prev_expression,
+                                        regulators_prev_expression_matrix
+                                        )
 
+            # loop over the optimized values and update the original weight matrix
+            optimized_data_index = 0
+            while optimized_data_index < len(optimized_matrix):
+                if optimized_data_index == 0:
+                    bias = optimized_matrix[optimized_data_index]
+                    np.put(bias_matrix,target_gene_index,bias)
+                else:
+                    weight_target_regulator = optimized_matrix[optimized_data_index]
+                    regulator_gene = regulator_genes[optimized_data_index - 1]
+                    regulator_gene_index = gene_list.index(regulator_gene)
+                    np.put(weight_matrix,[target_gene_index,regulator_gene_index],weight_target_regulator)
 
-        # update the timestep
+                # update the invariant
+                optimized_data_index = optimized_data_index + 1
+
+            # update the invariant
+            target_gene_index = target_gene_index + 1
+
+        # update the invariant
         timestep_index = timestep_index + 1
 
     return grn
+
+
+def objective_function(optimization_matrix,target_gene_current_expression,target_gene_prev_expression,regulators,prev_expression):
+    pass
+
+
+def run_bapso(optimization_matrix,
+              optimization_upper_bound_matrix,
+              optimization_lower_bound_matrix,
+              target_gene_current_expression,
+              target_gene_prev_expression,
+              regulators_prev_expression_matrix):
+
+    maxiter = 10
+
+    global_best = np.zeros((len(optimization_matrix),0))
+    best_error = -1
+
+    num_of_particles = 2
+    swarm = []
+
+    # populate the swarm
+    for particle_index in range(0,num_of_particles):
+        particle = Particle(optimization_matrix)
+        swarm.append(particle)
+
+    # begin the optimization
+    iteration_index = 0
+    while iteration_index < maxiter:
+
+        # cycle through particles in swarm and evaluate fitness
+        particle_num = 0
+        while particle_num < num_of_particles:
+            particle = swarm[particle_num]
+
+            particle.evaluate_fitness(target_gene_current_expression,regulators_prev_expression_matrix)
+
+            # if current particles error is less than current best error
+            if particle.current_error < best_error or best_error == -1:
+                # update the best position
+                global_best = particle.position
+
+                # update the best error
+                best_error = particle.current_error
+
+            # update the invariant
+            particle_num = particle_num + 1
+
+        # cycle through particles in swarm and update state
+        particle_num = 0
+        while particle_num < num_of_particles:
+            particle = swarm[particle_num]
+            particle.update_state(global_best)
+
+            # update the invariant
+            particle_num = particle_num + 1
+
+        # update invariant
+        iteration_index = iteration_index + 1
+
+    return global_best
+
+
+class Particle:
+    def __init__(self,initial_position):
+        self.position = initial_position[:]
+        self.velocity = np.random.rand(len(self.position),1)
+        self.best_position = np.random.rand(len(self.position),1)
+        self.position = self.best_position[:]
+        self.best_error = -1
+        self.current_error = 0
+        self.inertia = 0.5
+
+    def update_state(self,global_best):
+
+        r1 = random.uniform(0,1)
+        r2 = random.uniform(0,1)
+        c1 = 2
+        c2 = 2
+
+        # update the velocity and position
+        self.velocity = (self.inertia * self.velocity) + (r1*c1) * (self.best_position - self.position) + (r2*c2) * (global_best - self.position)
+        self.position = self.velocity + self.position
+
+        # calculate the error
+
+    def evaluate_fitness(self,target_gene_current_expression,regulators_prev_expression_matrix):
+
+        predicted_expression = 0
+        regulator_index = 0
+
+        bias = self.position[0]
+
+        while regulator_index < len(regulators_prev_expression_matrix):
+            weight = self.position[regulator_index + 1]
+            regulator_expression = regulators_prev_expression_matrix[regulator_index]
+            regulator_express_contrib = weight * regulator_expression + bias
+            predicted_expression = predicted_expression + regulator_express_contrib
+
+            # update invariant
+            regulator_index = regulator_index + 1
+
+        self.current_error = (target_gene_current_expression - predicted_expression)**2
+
+        if self.current_error < self.best_error or self.best_error == -1:
+            self.best_position = self.position
+            self.best_error = self.current_error
 
 
 def predict_expression(trained_grn):
