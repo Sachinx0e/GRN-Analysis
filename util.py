@@ -28,7 +28,7 @@ def load_gene_list(expression_data):
     return list(expression_data.columns.values)[:]
 
 
-def train_grn(grn, training_data,pbar,maxiter):
+def train_grn(grn, training_data,maxiter):
     weight_matrix = nx.to_numpy_matrix(grn.graph)
     bias_matrix = grn.bias[:]
     gene_list = grn.genes
@@ -166,7 +166,6 @@ def train_grn(grn, training_data,pbar,maxiter):
 
         hidden_state_matrix = output_matrix
 
-        pbar.update(1)
 
     # recreate the graph from tne updated weight matrix
     graph = nx.from_numpy_matrix(weight_matrix)
@@ -256,6 +255,10 @@ class Particle:
         # update the velocity and position
         self.velocity = (self.inertia * self.velocity) + (r1*c1) * (self.best_position - self.position) + (r2*c2) * (global_best - self.position)
         self.position = self.velocity + self.position
+
+        # clip the bounds
+        np.clip(self.velocity,-1,1)
+        np.clip(self.position,-1,1)
 
 
     def evaluate_fitness(self,target_gene_current_expression,regulators_prev_expression_matrix):
