@@ -2,6 +2,8 @@ import pandas
 import networkx as nx
 import random
 import numpy as np
+import scipy
+
 
 def load_original_expression():
     dataframe = pandas.read_csv('data/original/ecoli_10_4/Ecoli_subnet_10_4-1_dream4_timeseries.tsv', sep = '\t', header=0)
@@ -257,8 +259,13 @@ class Particle:
         self.position = self.velocity + self.position
 
         # clip the bounds
-        np.clip(self.velocity,-1,1)
-        np.clip(self.position,-1,1)
+        np.clip(self.velocity,0,1)
+
+        # clip the degradtion constant
+        np.clip(self.position[2],0,0.2)
+
+        # clip other variables
+        np.clip(self.position,0,1)
 
 
     def evaluate_fitness(self,target_gene_current_expression,regulators_prev_expression_matrix):
@@ -273,7 +280,7 @@ class Particle:
         while regulator_index < len(regulators_prev_expression_matrix):
             weight = self.position[regulator_index + 1]
             regulator_expression = regulators_prev_expression_matrix[regulator_index]
-            regulator_express_contrib = weight * regulator_expression + bias
+            regulator_express_contrib = (weight * regulator_expression) + bias
             predicted_expression = predicted_expression + regulator_express_contrib
 
             # update invariant
@@ -336,9 +343,6 @@ def predict_expression(trained_grn,previous_expression_values,timepoints_to_pred
             # get the target gene
             target_gene = trained_grn.genes[target_gene_index]
 
-            # get the bias
-            bias = trained_grn.bias[target_gene_index]
-
             # get the peak expression
             peak_expression = trained_grn.peak_expression_level[target_gene_index]
 
@@ -363,6 +367,9 @@ def predict_expression(trained_grn,previous_expression_values,timepoints_to_pred
 
                 # get the weight
                 weight = weight_matrix[target_gene_index,regulator_og_index]
+
+                # get the bias
+                bias = trained_grn.bias[regulator_og_index]
 
                 # calculate the expression
                 expression = weight*regulator_prev_expression_value + bias
@@ -391,14 +398,14 @@ def predict_expression(trained_grn,previous_expression_values,timepoints_to_pred
 
 
 def sigmoid(x):
-    return 1 / (1 + np.exp(-x))
+    return scipy.special.expit(x)
 
 
 def forget_gate_layer(hidden_state_matrix, expr_for_curr_time_point,weight_matrix,bias_matrix):
     # expr_for_curr_time_point_list = expr_for_curr_time_point.aslist()
-    result = (weight_matrix * expr_for_curr_time_point.T * hidden_state_matrix.T ) + bias_matrix.T
+    result = (weight_matrix * expr_for_curr_time_point.T * hidden_state_matrix.T * random.uniform(0,1) ) + bias_matrix.T
     v_sigmoid = np.vectorize(sigmoid)
-    forget_matrix = v_sigmoid(result) + random.uniform(0,1)
+    forget_matrix = v_sigmoid(result)
     return forget_matrix.T
 
 
@@ -407,7 +414,7 @@ def input_gate_layer(hidden_state_matrix,expr_for_curr_time_point,weight_matrix,
     hidden_state_matrix_transposed = hidden_state_matrix.T
     expr_for_curr_time_point_transposed = expr_for_curr_time_point.T
 
-    result = (weight_matrix * expr_for_curr_time_point_transposed * hidden_state_matrix_transposed * random.uniform(0,1)) + bias_matrix
+    result = (weight_matrix * expr_for_curr_time_point_transposed * hidden_state_matrix_transposed * random.uniform(-1,1)) + bias_matrix
     v_tanh = np.vectorize(np.tanh)
     input_matrix = v_tanh(result) + random.uniform(0,1)
     return input_matrix.T
@@ -514,5 +521,28 @@ class GrnSpace:
         return graph
 
 
+def serialize_predictions(adjacency_matrix,gene_list):
+    gene_count = len(gene_list)
+
+    source_list = []
+    target_list = []
+    confidence_list = []
+
+    for source in range(0,gene_count):
+        source_gene = gene_list[source]
+
+        for target in range(0,gene_count):
+            target_gene = gene_list[target]
+
+            weight = adjacency_matrix[source,target]
+
+            if target_gene != source_gene:
+                source_list.append(source_gene)
+                target_list.append(target_gene)
+                confidence_list.append(weight)
+
+    df = pandas.DataFrame({'source':source_list,'target':target_list,'weight':confidence_list})
+    df_sorted = df.sort_values('weight',ascending=False)
+    return df_sorted
 
 

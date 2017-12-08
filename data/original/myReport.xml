@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<GNW_analysis>
+<param name="version">3.1.2 Beta</param>
+<param name="author">Sachin Gavali</param>
+<param name="maxDivergence">0.3</param>
+<param name="date">Fri Dec 08 13:25:39 EST 2017</param>
+<param name="processid">myReport</param>
+<param name="note"></param>
+<param name="plots">true</param>
+<param name="pr">true</param>
+<param name="roc">true</param>
+<param name="motifAnalysis">true</param>
+<param name="numTabs">1</param>
+<param name="openReport">true</param>
+<param name="figuresArchive">false</param>
+<param name="significanceLevel">0.01</param>
+<param name="useBonferroni">true</param><param name="num_predictions_per_tab">1 </param>
+	 <MotifAnalysis name="InferenceMethod1">
+		 <NumMotifInstances>
+			 <motif id="0">37</motif>
+			 <motif id="1">1</motif>
+			 <motif id="2">0</motif>
+			 <motif id="3">0</motif>
+			 <motif id="4">0</motif>
+			 <motif id="5">0</motif>
+			 <motif id="6">6</motif>
+			 <motif id="7">0</motif>
+			 <motif id="8">0</motif>
+			 <motif id="9">0</motif>
+			 <motif id="10">0</motif>
+			 <motif id="11">0</motif>
+			 <motif id="12">0</motif>
+		 </NumMotifInstances>
+		 <MedianRank>
+			 <motif id="0">
+				 <edge id="0">0.2247191011235955</edge>
+				 <edge id="1">0.2247191011235955</edge>
+				 <edge id="2">0.6067415730337079</edge>
+				 <edge id="3">0.6348314606741573</edge>
+				 <edge id="4">0.6067415730337079</edge>
+				 <edge id="5">0.6348314606741573</edge>
+			 </motif>
+			 <motif id="1">
+				 <edge id="0">0.6235955056179775</edge>
+				 <edge id="1">0.6235955056179775</edge>
+				 <edge id="2">0.6853932584269663</edge>
+				 <edge id="3">0.9719101123595506</edge>
+				 <edge id="4">0.6853932584269663</edge>
+				 <edge id="5">0.9719101123595506</edge>
+			 </motif>
+			 <motif id="2">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="3">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="4">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="5">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="6">
+				 <edge id="0">0.38202247191011235</edge>
+				 <edge id="1">0.398876404494382</edge>
+				 <edge id="2">0.011235955056179775</edge>
+				 <edge id="3">0.05056179775280899</edge>
+				 <edge id="4">0.6853932584269663</edge>
+				 <edge id="5">0.5674157303370786</edge>
+			 </motif>
+			 <motif id="7">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="8">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="9">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="10">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="11">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="12">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+		 </MedianRank>
+		 <DivMedianRank>
+			 <motif id="0">
+				 <edge id="0">0.0</edge>
+				 <edge id="1">0.0</edge>
+				 <edge id="2">0.011235955056179803</edge>
+				 <edge id="3">0.0786516853932584</edge>
+				 <edge id="4">0.011235955056179803</edge>
+				 <edge id="5">0.0786516853932584</edge>
+			 </motif>
+			 <motif id="1">
+				 <edge id="0">0.028089887640449396</edge>
+				 <edge id="1">0.028089887640449396</edge>
+				 <edge id="2">0.4606741573033708</edge>
+				 <edge id="3">0.4157303370786517</edge>
+				 <edge id="4">0.4606741573033708</edge>
+				 <edge id="5">0.4157303370786517</edge>
+			 </motif>
+			 <motif id="2">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="3">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="4">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="5">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="6">
+				 <edge id="0">0.15730337078651685</edge>
+				 <edge id="1">0.1741573033707865</edge>
+				 <edge id="2">-0.5842696629213483</edge>
+				 <edge id="3">-0.1741573033707865</edge>
+				 <edge id="4">0.0898876404494382</edge>
+				 <edge id="5">-0.028089887640449507</edge>
+			 </motif>
+			 <motif id="7">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="8">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="9">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="10">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="11">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="12">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+		 </DivMedianRank>
+		 <Pvals>
+			 <motif id="0">
+				 <edge id="0">0.99561585178115</edge>
+				 <edge id="1">0.99561585178115</edge>
+				 <edge id="2">0.5061375769788553</edge>
+				 <edge id="3">0.2491798321591302</edge>
+				 <edge id="4">0.5061375769788553</edge>
+				 <edge id="5">0.2491798321591302</edge>
+			 </motif>
+			 <motif id="1">
+				 <edge id="0">0.6176470588235294</edge>
+				 <edge id="1">0.6176470588235294</edge>
+				 <edge id="2">0.09558823529411764</edge>
+				 <edge id="3">0.033044294245757874</edge>
+				 <edge id="4">0.09558823529411764</edge>
+				 <edge id="5">0.033044294245757874</edge>
+			 </motif>
+			 <motif id="2">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="3">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="4">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="5">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="6">
+				 <edge id="0">0.671421200058971</edge>
+				 <edge id="1">0.29330679640277163</edge>
+				 <edge id="2">2.5799793601651185E-4</edge>
+				 <edge id="3">0.03455329500221141</edge>
+				 <edge id="4">0.7793564794338789</edge>
+				 <edge id="5">0.954813504349108</edge>
+			 </motif>
+			 <motif id="7">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="8">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="9">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="10">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="11">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+			 <motif id="12">
+				 <edge id="0">-1.0</edge>
+				 <edge id="1">-1.0</edge>
+				 <edge id="2">-1.0</edge>
+				 <edge id="3">-1.0</edge>
+				 <edge id="4">-1.0</edge>
+				 <edge id="5">-1.0</edge>
+			 </motif>
+		 </Pvals>
+		 <Background>
+			 <motif id="0">
+				 <edge id="0">0.2247191011235955</edge>
+				 <edge id="1">0.5561797752808989</edge>
+				 <edge id="2">0.5955056179775281</edge>
+			 </motif>
+		 </Background>
+	 </MotifAnalysis>
+	 <PR name="InferenceMethod1" >
+		 <goldstandard name="Ecoli_subnet_10_4-1" prediction="Ecoli_subnet_10_4-1_ouput.txt" AUPR="0.11333595038557111">
+0,0 0,0.0 0.0,0.0 0.07,0.12 0.07,0.11 0.07,0.1 0.13,0.18 0.13,0.17 0.13,0.15 0.13,0.14 0.13,0.13 0.13,0.12 0.13,0.11 0.13,0.1 0.13,0.09 0.13,0.08 0.13,0.07 0.13,0.06 0.13,0.05 0.13,0.04 0.2,0.06 0.27,0.08 0.33,0.09 0.4,0.11 0.47,0.12 0.47,0.11 0.47,0.1 0.53,0.11 0.6,0.13 0.6,0.12 0.6,0.11 0.67,0.12 0.73,0.13 0.8,0.14 0.87,0.15 0.93,0.16 1.0,0.17  1,0
+		 </goldstandard>
+	 </PR>
+	 <ROC name="InferenceMethod1">
+		 <goldstandard name="Ecoli_subnet_10_4-1" prediction="Ecoli_subnet_10_4-1_ouput.txt" AUROC="0.27022222222222225">
+0,0 0.01,0.0 0.03,0.0 0.04,0.0 0.05,0.0 0.07,0.0 0.08,0.0 0.09,0.0 0.09,0.07 0.11,0.07 0.12,0.07 0.12,0.13 0.13,0.13 0.15,0.13 0.16,0.13 0.17,0.13 0.19,0.13 0.2,0.13 0.21,0.13 0.23,0.13 0.24,0.13 0.25,0.13 0.27,0.13 0.28,0.13 0.29,0.13 0.31,0.13 0.32,0.13 0.33,0.13 0.35,0.13 0.36,0.13 0.37,0.13 0.39,0.13 0.4,0.13 0.41,0.13 0.43,0.13 0.44,0.13 0.45,0.13 0.47,0.13 0.48,0.13 0.49,0.13 0.51,0.13 0.52,0.13 0.53,0.13 0.55,0.13 0.56,0.13 0.57,0.13 0.59,0.13 0.6,0.13 0.61,0.13 0.63,0.13 0.63,0.2 0.64,0.2 0.65,0.2 0.65,0.27 0.65,0.33 0.65,0.4 0.65,0.47 0.67,0.47 0.68,0.47 0.69,0.47 0.71,0.47 0.72,0.47 0.73,0.47 0.75,0.47 0.76,0.47 0.77,0.47 0.79,0.47 0.8,0.47 0.81,0.47 0.83,0.47 0.83,0.53 0.83,0.6 0.84,0.6 0.85,0.6 0.87,0.6 0.88,0.6 0.89,0.6 0.91,0.6 0.92,0.6 0.93,0.6 0.95,0.6 0.96,0.6 0.97,0.6 0.97,0.67 0.97,0.73 0.97,0.8 0.97,0.87 0.97,0.93 0.97,1.0 0.99,1.0 1.0,1.0 1,1.0 1,0
+		 </goldstandard>
+	 </ROC>
+</GNW_analysis>

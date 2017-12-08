@@ -2,8 +2,8 @@ import util
 import matplotlib.pyplot as plt
 import networkx as nx
 import tqdm
-import time
 from multiprocessing import Pool
+import numpy
 
 # load the expression data
 original_expression = util.load_original_expression()
@@ -16,13 +16,15 @@ testing_expression = util.extract_testing_data(original_expression, 20)
 regulators = 4
 
 # maximum iteration for bapso
-maxiter = 100
+maxiter = 1
 
 # initialize the grn space
-grn_space_size = 1000
+grn_space_size = 1
 
 # least mse
-least_mse = 0.35
+least_mse = 0.9
+
+
 
 def train_grn(grn):
 
@@ -84,6 +86,11 @@ if __name__ == "__main__":
 
     if selected_grn:
         matrix = (nx.to_numpy_matrix(selected_grn.graph))
+
+        data = util.serialize_predictions(matrix,selected_grn.genes)
+
+        data.to_csv('data\data.csv',header=False,sep='\t',index=False)
+
         nx.draw(selected_grn.graph,with_labels=True)
 
         print("yeah we found a grn")
@@ -101,6 +108,9 @@ if __name__ == "__main__":
 
     else:
         print("Sorry could not find a grn")
+
+
+
 
 
 
