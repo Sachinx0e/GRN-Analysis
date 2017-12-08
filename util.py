@@ -28,15 +28,19 @@ def load_gene_list(expression_data):
     return list(expression_data.columns.values)[:]
 
 
-def train_grn(grn, training_data,pbar):
+def train_grn(grn, training_data,pbar,maxiter):
     weight_matrix = nx.to_numpy_matrix(grn.graph)
     bias_matrix = grn.bias[:]
     gene_list = grn.genes
+    gene_count = len(gene_list)
 
     training_data_count = training_data.columns.values.size
 
     # skip the first column, as we plan to use it later to feed into the first layer
     timestep_index = 1
+
+    hidden_state_matrix = np.random.rand(gene_count,1)
+    combined_weight_matrix = build_combined_weight_matrix(weight_matrix)
 
     # loop over the training data
     while timestep_index < training_data_count:
@@ -46,6 +50,18 @@ def train_grn(grn, training_data,pbar):
         training_column_size = training_column.size
 
         target_gene_index = 0
+
+
+        # decide what to forget from previous state
+        forget_matrix = forget_gate_layer(hidden_state_matrix,prev_training_column, combined_weight_matrix,
+                                          bias_matrix)
+
+        # pass the input thru input gate layer
+        input_matrix = input_gate_layer(hidden_state_matrix,prev_training_column, combined_weight_matrix,
+                                        bias_matrix)
+
+        # combine the input with forget gate to get the actual input
+        transformed_input_matrix = np.multiply(input_matrix, forget_matrix)
 
         # loop over the genes
         while target_gene_index < training_column_size:
@@ -106,18 +122,12 @@ def train_grn(grn, training_data,pbar):
                 # update the invariant
                 regulator_gene_index = regulator_gene_index + 1
 
-            # lower bound and upper bound matrices for bapso
-            lower_bound = np.zeros((regulator_gene_count + 1,1))
-            lower_bound.fill(-1)
-            upper_bound = np.ones((regulator_gene_count + 1,1))
 
             # start the training
             optimized_matrix = run_bapso(optimization_matrix,
-                                        upper_bound,
-                                        lower_bound,
                                         target_gene_expression,
-                                        target_gene_prev_expression,
-                                        regulators_prev_expression_matrix
+                                        regulators_prev_expression_matrix,
+                                        maxiter
                                         )
 
             # loop over the optimized values and update the original weight matrix
@@ -150,24 +160,28 @@ def train_grn(grn, training_data,pbar):
         # update the invariant
         timestep_index = timestep_index + 1
 
+        # update the output that will be passed to new layer
+        output_matrix = output_gate_layer(hidden_state_matrix, transformed_input_matrix, combined_weight_matrix,
+                                          bias_matrix)
+
+        hidden_state_matrix = output_matrix
+
         pbar.update(1)
 
     # recreate the graph from tne updated weight matrix
     graph = nx.from_numpy_matrix(weight_matrix)
     grn.graph = graph
     grn.bias = bias_matrix
+    grn.hidden_state_matrix = hidden_state_matrix
     grn.relabel_nodes()
     return grn
 
 
 def run_bapso(optimization_matrix,
-              optimization_upper_bound_matrix,
-              optimization_lower_bound_matrix,
               target_gene_current_expression,
-              target_gene_prev_expression,
-              regulators_prev_expression_matrix):
+              regulators_prev_expression_matrix,
+              maxiter=10):
 
-    maxiter = 10
 
     global_best = np.random.rand((len(optimization_matrix)))
     best_error = -1
@@ -284,7 +298,7 @@ def predict_expression(trained_grn,previous_expression_values,timepoints_to_pred
     gene_labels = pandas.Series(trained_grn.genes)
     predicted_expression_matrix = pandas.DataFrame(np.zeros((len(trained_grn.genes),timepoints_to_predict)),index=gene_labels)
 
-    hidden_state_matrix = np.random.rand(gene_count,1)
+    hidden_state_matrix = trained_grn.hidden_state_matrix
 
     combined_weight_matrix = build_combined_weight_matrix(weight_matrix)
 
@@ -353,7 +367,7 @@ def predict_expression(trained_grn,previous_expression_values,timepoints_to_pred
                 total_expression = total_expression + expression
 
             # apply a sigmoid function to total expression
-            target_gene_expression = peak_expression * sigmoid(total_expression) - degradation_constant
+            target_gene_expression = (peak_expression * sigmoid(total_expression) - degradation_constant)
 
             # add the target gene expression to the matrix for current timepoint
             expr_for_curr_timepoint[target_gene_index] = target_gene_expression
@@ -444,6 +458,7 @@ class Grn:
         self.bias = np.random.rand(len(self.genes))
         self.peak_expression_level = np.random.rand(len(self.genes))
         self.degradation_constant = np.random.rand(len(self.genes))
+        self.hidden_state_matrix = np.random.rand(len(self.genes),1)
 
     def get_regulators(self,target_gene):
         pred = nx.predecessor(self.graph, target_gene, cutoff=1)

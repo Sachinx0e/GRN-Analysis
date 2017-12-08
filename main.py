@@ -15,17 +15,20 @@ if __name__ == "__main__":
     gene_list = util.load_gene_list(original_expression)
 
     # set the max allowed regulators to 4
-    regulators = 2
+    regulators = 4
+
+    # maximum iteration for bapso
+    maxiter = 20
 
     # initialize the grn space
-    grn_space_size = 5
+    grn_space_size = 15
     grn_space = util.GrnSpace(gene_list, regulators,space_size=grn_space_size)
 
     # init selected grn to null
     selected_grn = None
 
     # least mse
-    least_mse = 0.4
+    least_mse = 0.35
 
     pbar = tqdm.tqdm(total=grn_space_size*training_expression.shape[1])
 
@@ -36,7 +39,7 @@ if __name__ == "__main__":
         grn = grn_space.get()
 
         # train the grn
-        trained_grn = util.train_grn(grn,training_expression,pbar)
+        trained_grn = util.train_grn(grn,training_expression,pbar,maxiter)
 
         # simulate the network to predict expression
         predicted_expression = util.predict_expression(trained_grn,training_expression,testing_expression.shape[1])
@@ -59,6 +62,7 @@ if __name__ == "__main__":
         nx.draw(selected_grn.graph,with_labels=True)
 
         print("yeah we found a grn")
+        print("mse is : ",least_mse)
 
         predicted_expression = util.predict_expression(selected_grn,training_expression,41)
         predicted_expression = predicted_expression.T
