@@ -28,9 +28,8 @@ def load_gene_list(expression_data):
     return list(expression_data.columns.values)[:]
 
 
-def train_grn(grn, training_data):
+def train_grn(grn, training_data,pbar):
     weight_matrix = nx.to_numpy_matrix(grn.graph)
-    print(weight_matrix)
     bias_matrix = grn.bias[:]
     gene_list = grn.genes
 
@@ -47,8 +46,6 @@ def train_grn(grn, training_data):
         training_column_size = training_column.size
 
         target_gene_index = 0
-
-        print("TimeStep ", timestep_index)
 
         # loop over the genes
         while target_gene_index < training_column_size:
@@ -153,9 +150,9 @@ def train_grn(grn, training_data):
         # update the invariant
         timestep_index = timestep_index + 1
 
-    # recreate the graph from tne updated weight matrix
-    print(weight_matrix)
+        pbar.update(1)
 
+    # recreate the graph from tne updated weight matrix
     graph = nx.from_numpy_matrix(weight_matrix)
     grn.graph = graph
     grn.bias = bias_matrix
@@ -170,7 +167,7 @@ def run_bapso(optimization_matrix,
               target_gene_prev_expression,
               regulators_prev_expression_matrix):
 
-    maxiter = 20
+    maxiter = 10
 
     global_best = np.random.rand((len(optimization_matrix)))
     best_error = -1
@@ -239,8 +236,10 @@ class Particle:
         c1 = 2
         c2 = 2
 
+        # update inertia (this is bat part of bapso)
+        self.inertia = 0 + random.uniform(0,1) * (1-0)
+
         # update the velocity and position
-        value = (self.best_position - self.position) + (r2*c2)
         self.velocity = (self.inertia * self.velocity) + (r1*c1) * (self.best_position - self.position) + (r2*c2) * (global_best - self.position)
         self.position = self.velocity + self.position
 
@@ -380,9 +379,9 @@ def sigmoid(x):
 
 def forget_gate_layer(hidden_state_matrix, expr_for_curr_time_point,weight_matrix,bias_matrix):
     # expr_for_curr_time_point_list = expr_for_curr_time_point.aslist()
-    result = (weight_matrix * expr_for_curr_time_point.T * hidden_state_matrix.T * random.uniform(0,1)) + bias_matrix.T
+    result = (weight_matrix * expr_for_curr_time_point.T * hidden_state_matrix.T ) + bias_matrix.T
     v_sigmoid = np.vectorize(sigmoid)
-    forget_matrix = v_sigmoid(result)
+    forget_matrix = v_sigmoid(result) + random.uniform(0,1)
     return forget_matrix.T
 
 
@@ -391,10 +390,9 @@ def input_gate_layer(hidden_state_matrix,expr_for_curr_time_point,weight_matrix,
     hidden_state_matrix_transposed = hidden_state_matrix.T
     expr_for_curr_time_point_transposed = expr_for_curr_time_point.T
 
-
-    result = (weight_matrix * expr_for_curr_time_point_transposed * hidden_state_matrix_transposed * random.uniform(-1,1)) + bias_matrix
+    result = (weight_matrix * expr_for_curr_time_point_transposed * hidden_state_matrix_transposed * random.uniform(0,1)) + bias_matrix
     v_tanh = np.vectorize(np.tanh)
-    input_matrix = v_tanh(result)
+    input_matrix = v_tanh(result) + random.uniform(0,1)
     return input_matrix.T
 
 
@@ -476,7 +474,6 @@ class GrnSpace:
         graph = self._generate_graph()
 
         while not nx.is_directed_acyclic_graph(graph):
-            print("is cyclic")
             graph = self._generate_graph()
 
         self.generated_count = self.generated_count + 1

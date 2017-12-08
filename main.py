@@ -1,6 +1,7 @@
 import util
 import matplotlib.pyplot as plt
 import networkx as nx
+import tqdm
 
 if __name__ == "__main__":
     # load the expression data
@@ -14,16 +15,19 @@ if __name__ == "__main__":
     gene_list = util.load_gene_list(original_expression)
 
     # set the max allowed regulators to 4
-    regulators = 4
+    regulators = 2
 
     # initialize the grn space
-    grn_space = util.GrnSpace(gene_list, regulators,space_size=20)
+    grn_space_size = 5
+    grn_space = util.GrnSpace(gene_list, regulators,space_size=grn_space_size)
 
     # init selected grn to null
     selected_grn = None
 
     # least mse
-    least_mse = 0.5
+    least_mse = 0.4
+
+    pbar = tqdm.tqdm(total=grn_space_size*training_expression.shape[1])
 
     # loop over all the grns
     while grn_space.has_next():
@@ -32,14 +36,13 @@ if __name__ == "__main__":
         grn = grn_space.get()
 
         # train the grn
-        trained_grn = util.train_grn(grn,training_expression)
+        trained_grn = util.train_grn(grn,training_expression,pbar)
 
         # simulate the network to predict expression
         predicted_expression = util.predict_expression(trained_grn,training_expression,testing_expression.shape[1])
 
         # calculate the mse
         mse = util.calculate_mse(predicted_expression,testing_expression)
-        print("MSE is : ",mse)
 
         # check if mse is lower than or equal to previous value
         if mse <= least_mse:
@@ -48,6 +51,8 @@ if __name__ == "__main__":
 
             # update the mse value
             least_mse = mse
+
+    pbar.close()
 
     if selected_grn:
         matrix = (nx.to_numpy_matrix(selected_grn.graph))
