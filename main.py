@@ -17,16 +17,16 @@ if __name__ == "__main__":
     regulators = 4
 
     # initialize the grn space
-    grn_space = util.GrnSpace(gene_list, regulators)
+    grn_space = util.GrnSpace(gene_list, regulators,space_size=20)
 
     # init selected grn to null
     selected_grn = None
 
     # least mse
-    least_mse = 10**-3
+    least_mse = 0.5
 
     # loop over all the grns
-    if grn_space.has_next():
+    while grn_space.has_next():
 
         # get the grn
         grn = grn_space.get()
@@ -35,10 +35,11 @@ if __name__ == "__main__":
         trained_grn = util.train_grn(grn,training_expression)
 
         # simulate the network to predict expression
-        predicted_expression = util.predict_expression(trained_grn)
+        predicted_expression = util.predict_expression(trained_grn,training_expression,testing_expression.shape[1])
 
         # calculate the mse
         mse = util.calculate_mse(predicted_expression,testing_expression)
+        print("MSE is : ",mse)
 
         # check if mse is lower than or equal to previous value
         if mse <= least_mse:
@@ -49,15 +50,20 @@ if __name__ == "__main__":
             least_mse = mse
 
     if selected_grn:
-        print(nx.to_numpy_matrix(selected_grn.graph))
-        pred = nx.predecessor(selected_grn.graph,'eda',cutoff=1)
-        print(pred)
-        pred = util.extract_list_from_dict(pred)
-        print(pred)
+        matrix = (nx.to_numpy_matrix(selected_grn.graph))
         nx.draw(selected_grn.graph,with_labels=True)
+
+        print("yeah we found a grn")
+
+        predicted_expression = util.predict_expression(selected_grn,training_expression,41)
+        predicted_expression = predicted_expression.T
+        predicted_expression.plot()
+
+        testing_expression = testing_expression.T
+        testing_expression.plot()
+
         plt.draw()
         plt.show()
-        print("yeah we found a grn")
 
     else:
         print("Sorry could not find a grn")
