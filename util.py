@@ -5,22 +5,43 @@ import numpy as np
 import scipy
 
 
-def load_original_expression():
-    dataframe = pandas.read_csv('data/original/ecoli_5_genes_4_interactions_25_time_points/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv', sep = '\t', header=0)
-    dataframe = dataframe.drop('Time',axis=1)
-    return dataframe
+def load_original_expression(option):
 
-def extract_training_data(original_expression, percent):
-    normalized_percent = percent * 0.01
-    data_size = original_expression.shape[0] * normalized_percent
+    dataframe = None
+    regulators = 4
+    num_time_series = 25
+
+    if option is 1:
+        dataframe = pandas.read_csv('data/original/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv',sep='\t', header=0)
+        regulators = 2
+        num_time_series = 25
+    elif option is 2:
+        dataframe = pandas.read_csv('data/original/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv',sep='\t', header=0)
+        regulators = 2
+        num_time_series = 25
+
+    dataframe = dataframe.drop('Time',axis=1)
+    return (dataframe,regulators,num_time_series)
+
+
+def extract_training_data(original_expression, num_time_series,time_points_per_series):
+
+    if num_time_series == 25:
+        data_size = 23* time_points_per_series
+    else:
+        data_size = 46 * time_points_per_series
+
     dataframe = original_expression[:int(data_size)]
     dataframe = dataframe.T
     return dataframe
 
 
-def extract_testing_data(original_expression, percent):
-    normalized_percent = percent * 0.01
-    data_size = original_expression.shape[0] * normalized_percent
+def extract_testing_data(original_expression, num_time_series,time_points_per_series):
+    if num_time_series == 25:
+        data_size = 2 * time_points_per_series
+    else:
+        data_size = 4 * time_points_per_series
+
     dataframe = original_expression.tail(int(data_size))
     dataframe = dataframe.T
     return dataframe
@@ -551,8 +572,9 @@ def serialize_predictions(adjacency_matrix,gene_list):
 
 class TrainingConfig:
 
-    def __init__(self,grn,training_expression,testing_expression):
+    def __init__(self,grn,training_expression,testing_expression,maxiter):
         self.grn = grn
         self.training_expression = training_expression
         self.testing_expression = testing_expression
+        self.maxiter = maxiter
 

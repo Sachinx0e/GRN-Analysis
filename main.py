@@ -3,18 +3,8 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import tqdm
 from multiprocessing import Pool
+import time
 
-# set the max allowed regulators to 4
-regulators = 4
-
-# maximum iteration for bapso
-maxiter = 1
-
-# initialize the grn space
-grn_space_size = 10
-
-# least mse
-least_mse = 0.9
 
 
 def train_grn(training_config):
@@ -22,6 +12,7 @@ def train_grn(training_config):
     grn = training_config.grn
     training_expression = training_config.training_expression
     testing_expression = training_config.testing_expression
+    maxiter = training_config.maxiter
 
     # train the grn
     trained_grn = util.train_grn(grn, training_expression, maxiter)
@@ -37,18 +28,61 @@ def train_grn(training_config):
 
 if __name__ == "__main__":
 
-    original_expression = util.load_original_expression()
-    training_expression = util.extract_training_data(original_expression, 80)
-    testing_expression = util.extract_testing_data(original_expression, 20)
+    # grn search space
+    grn_space_size = 1000
+
+    # maximum iteration for bapso
+    maxiter = 20
+
+    # mse to use as cutoff
+    least_mse = 0.1
+
+    # set the max allowed regulators to 4,
+    regulators = 4                              # will change according to selection
+    num_time_series = 25                        # will change according to selection
+    time_points_per_series = 21                 # constant
+
+    selected_option = 0
+    while not 1 <= selected_option <= 10 :
+        print("1. Ecoli 5 genes 2 regulators 4 interactions 25 timepoints")
+        print("2. Ecoli 5 genes 2 regulators 4 interactions 50 timepoints")
+        print("11. Process matlab data")
+        try:
+            selected_option = int(input("Select the dataset to use [1] : "))
+        except:
+            selected_option = 1
+
+        try:
+            maxiter = int(input("Enter the maximum iteration you want in BAPSO [20] : "))
+        except:
+            maxiter = 20
+
+        try:
+            grn_space_size = int(input("Enter the size of GRN search space [1000] : "))
+        except:
+            grn_space_size = 1000
+
+        try:
+            least_mse = float(input("Enter the mse you want to use as cutoff [0.1] : "))
+        except:
+            least_mse = 0.1
+
+
+    # get the data
+    original_expression,regulators,num_time_series = util.load_original_expression(selected_option)
+    training_expression = util.extract_training_data(original_expression,num_time_series,time_points_per_series)
+    testing_expression = util.extract_testing_data(original_expression,num_time_series,time_points_per_series)
 
     # load the gene list
     gene_list = util.load_gene_list(original_expression)
 
+    # create the grn space
     grn_space = util.GrnSpace(gene_list, regulators,space_size=grn_space_size)
 
     # init selected grn to null
     selected_grn = None
 
+    # list to hold all the training configs
     grn_training_configs = []
 
     pbar = tqdm.tqdm(total=grn_space_size)
@@ -59,7 +93,7 @@ if __name__ == "__main__":
         # get the grn
         grn = grn_space.get()
 
-        training_config = util.TrainingConfig(grn,training_expression,testing_expression)
+        training_config = util.TrainingConfig(grn,training_expression,testing_expression,maxiter)
 
         grn_training_configs.append(training_config)
 
@@ -106,6 +140,7 @@ if __name__ == "__main__":
         plt.show()
 
     else:
+        time.sleep(0.1)
         print("Sorry could not find a grn")
 
 
