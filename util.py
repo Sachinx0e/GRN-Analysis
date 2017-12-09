@@ -12,11 +12,11 @@ def load_original_expression(option):
     num_time_series = 25
 
     if option is 1:
-        dataframe = pandas.read_csv('data/original/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv',sep='\t', header=0)
+        dataframe = pandas.read_csv('data/rnn/original/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv',sep='\t', header=0)
         regulators = 2
         num_time_series = 25
     elif option is 2:
-        dataframe = pandas.read_csv('data/original/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv',sep='\t', header=0)
+        dataframe = pandas.read_csv('data/rnn/original/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv',sep='\t', header=0)
         regulators = 2
         num_time_series = 25
 
@@ -578,3 +578,9 @@ class TrainingConfig:
         self.testing_expression = testing_expression
         self.maxiter = maxiter
 
+
+def get_path_to_save(option):
+    if option is 1:
+        return 'data/rnn/predicted/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_output.txt'
+    elif option is 2:
+        return 'data/rnn/predicted/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_output.txt'

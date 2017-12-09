@@ -46,7 +46,6 @@ if __name__ == "__main__":
     while not 1 <= selected_option <= 10 :
         print("1. Ecoli 5 genes 2 regulators 4 interactions 25 timepoints")
         print("2. Ecoli 5 genes 2 regulators 4 interactions 50 timepoints")
-        print("11. Process matlab data")
         try:
             selected_option = int(input("Select the dataset to use [1] : "))
         except:
@@ -122,7 +121,11 @@ if __name__ == "__main__":
 
         data = util.serialize_predictions(matrix,selected_grn.genes)
 
-        data.to_csv('data\data.csv',header=False,sep='\t',index=False)
+        # get the path to save this file based on the option selected
+        path_to_save = util.get_path_to_save(selected_option)
+
+        # save the data
+        data.to_csv(path_to_save, header=False, sep='\t', index=False)
 
         nx.draw(selected_grn.graph,with_labels=True)
 
