@@ -7,21 +7,28 @@ import scipy
 
 def load_original_expression(option):
 
-    dataframe = None
+    original_expression = None
     regulators = 4
     num_time_series = 25
+    pertubations = None
 
     if option is 1:
-        dataframe = pandas.read_csv('data/rnn/original/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv',sep='\t', header=0)
+        original_expression = pandas.read_csv('data/rnn/original/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv'
+                                              ,sep='\t', header=0)
+        pertubations = pandas.read_csv('data/rnn/original/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries_perturbations.tsv'
+                                              ,sep='\t', header=0)
         regulators = 2
         num_time_series = 25
     elif option is 2:
-        dataframe = pandas.read_csv('data/rnn/original/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv',sep='\t', header=0)
+        original_expression = pandas.read_csv('data/rnn/original/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv'
+                                              ,sep='\t', header=0)
+        pertubations = pandas.read_csv('data/rnn/original/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries_perturbations.tsv'
+                                              ,sep='\t', header=0)
         regulators = 2
         num_time_series = 25
 
-    dataframe = dataframe.drop('Time',axis=1)
-    return (dataframe,regulators,num_time_series)
+    original_expression = original_expression.drop('Time',axis=1)
+    return (original_expression,regulators,num_time_series,pertubations)
 
 
 def extract_training_data(original_expression, num_time_series,time_points_per_series):
@@ -51,7 +58,7 @@ def load_gene_list(expression_data):
     return list(expression_data.columns.values)[:]
 
 
-def train_grn(grn, training_data,maxiter):
+def train_grn(grn, training_data, maxiter, pertubations):
     weight_matrix = nx.to_numpy_matrix(grn.graph)
     bias_matrix = grn.bias[:]
     gene_list = grn.genes
@@ -572,11 +579,12 @@ def serialize_predictions(adjacency_matrix,gene_list):
 
 class TrainingConfig:
 
-    def __init__(self,grn,training_expression,testing_expression,maxiter):
+    def __init__(self, grn, training_expression, testing_expression, maxiter, pertubations):
         self.grn = grn
         self.training_expression = training_expression
         self.testing_expression = testing_expression
         self.maxiter = maxiter
+        self.pertubation = pertubations
 
 
 def get_path_to_save(option):

@@ -13,9 +13,10 @@ def train_grn(training_config):
     training_expression = training_config.training_expression
     testing_expression = training_config.testing_expression
     maxiter = training_config.maxiter
+    pertubations = training_config.pertubation
 
     # train the grn
-    trained_grn = util.train_grn(grn, training_expression, maxiter)
+    trained_grn = util.train_grn(grn, training_expression, maxiter,pertubations)
 
     # simulate the network to predict expression
     predicted_expression = util.predict_expression(trained_grn, training_expression, testing_expression.shape[1])
@@ -68,7 +69,7 @@ if __name__ == "__main__":
 
 
     # get the data
-    original_expression,regulators,num_time_series = util.load_original_expression(selected_option)
+    original_expression,regulators,num_time_series,pertubations = util.load_original_expression(selected_option)
     training_expression = util.extract_training_data(original_expression,num_time_series,time_points_per_series)
     testing_expression = util.extract_testing_data(original_expression,num_time_series,time_points_per_series)
 
@@ -92,7 +93,7 @@ if __name__ == "__main__":
         # get the grn
         grn = grn_space.get()
 
-        training_config = util.TrainingConfig(grn,training_expression,testing_expression,maxiter)
+        training_config = util.TrainingConfig(grn,training_expression,testing_expression,maxiter,pertubations)
 
         grn_training_configs.append(training_config)
 
