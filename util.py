@@ -6,7 +6,7 @@ import scipy
 
 
 def load_original_expression():
-    dataframe = pandas.read_csv('data/original/ecoli_10_4/Ecoli_subnet_10_4-1_dream4_timeseries.tsv', sep = '\t', header=0)
+    dataframe = pandas.read_csv('data/original/ecoli_5_genes_4_interactions_25_time_points/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv', sep = '\t', header=0)
     dataframe = dataframe.drop('Time',axis=1)
     return dataframe
 
@@ -226,6 +226,9 @@ def run_bapso(optimization_matrix,
 
             # update the invariant
             particle_num = particle_num + 1
+
+
+
 
         # update invariant
         iteration_index = iteration_index + 1
@@ -545,4 +548,11 @@ def serialize_predictions(adjacency_matrix,gene_list):
     df_sorted = df.sort_values('weight',ascending=False)
     return df_sorted
 
+
+class TrainingConfig:
+
+    def __init__(self,grn,training_expression,testing_expression):
+        self.grn = grn
+        self.training_expression = training_expression
+        self.testing_expression = testing_expression
 

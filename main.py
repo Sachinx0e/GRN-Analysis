@@ -3,14 +3,6 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import tqdm
 from multiprocessing import Pool
-import numpy
-
-# load the expression data
-original_expression = util.load_original_expression()
-
-# split original expression in training and testing data
-training_expression = util.extract_training_data(original_expression, 80)
-testing_expression = util.extract_testing_data(original_expression, 20)
 
 # set the max allowed regulators to 4
 regulators = 4
@@ -19,14 +11,17 @@ regulators = 4
 maxiter = 1
 
 # initialize the grn space
-grn_space_size = 1
+grn_space_size = 10
 
 # least mse
 least_mse = 0.9
 
 
+def train_grn(training_config):
 
-def train_grn(grn):
+    grn = training_config.grn
+    training_expression = training_config.training_expression
+    testing_expression = training_config.testing_expression
 
     # train the grn
     trained_grn = util.train_grn(grn, training_expression, maxiter)
@@ -42,6 +37,10 @@ def train_grn(grn):
 
 if __name__ == "__main__":
 
+    original_expression = util.load_original_expression()
+    training_expression = util.extract_training_data(original_expression, 80)
+    testing_expression = util.extract_testing_data(original_expression, 20)
+
     # load the gene list
     gene_list = util.load_gene_list(original_expression)
 
@@ -50,8 +49,7 @@ if __name__ == "__main__":
     # init selected grn to null
     selected_grn = None
 
-
-    grns = []
+    grn_training_configs = []
 
     pbar = tqdm.tqdm(total=grn_space_size)
 
@@ -61,17 +59,18 @@ if __name__ == "__main__":
         # get the grn
         grn = grn_space.get()
 
-        grns.append(grn)
+        training_config = util.TrainingConfig(grn,training_expression,testing_expression)
+
+        grn_training_configs.append(training_config)
 
         pbar.update(1)
 
     pbar.close()
 
-
     # do the task
     trained_grns = []
     pool = Pool(processes=8)
-    for value in tqdm.tqdm(pool.imap_unordered(train_grn,grns), total=len(grns)):
+    for value in tqdm.tqdm(pool.imap_unordered(train_grn, grn_training_configs), total=len(grn_training_configs)):
         trained_grns.append(value)
 
     # loop over the trained grns
