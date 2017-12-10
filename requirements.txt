@@ -1,0 +1,13 @@
+cycler==0.10.0
+decorator==4.1.2
+matplotlib==2.1.0
+networkx==2.0
+numpy==1.13.3
+pandas==0.21.0
+pyparsing==2.2.0
+pyswarm==0.6
+python-dateutil==2.6.1
+pytz==2017.3
+scipy==1.0.0
+six==1.11.0
+tqdm==4.19.4

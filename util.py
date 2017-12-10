@@ -12,6 +12,7 @@ def load_original_expression(option):
     num_time_series = 25
     pertubations = None
 
+    # Genes  = 5, Interactions = 4, TimeSeries  = 25
     if option is 1:
         original_expression = pandas.read_csv('data/rnn/original/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv'
                                               ,sep='\t', header=0)
@@ -19,13 +20,106 @@ def load_original_expression(option):
                                               ,sep='\t', header=0)
         regulators = 2
         num_time_series = 25
-    elif option is 2:
+
+    # Genes  = 5, Interactions = 4, TimeSeries  = 50
+    if option is 2:
         original_expression = pandas.read_csv('data/rnn/original/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries.tsv'
                                               ,sep='\t', header=0)
         pertubations = pandas.read_csv('data/rnn/original/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_timeseries_perturbations.tsv'
                                               ,sep='\t', header=0)
         regulators = 2
+        num_time_series = 50
+
+    # Genes  = 5, Interactions = 7, TimeSeries  = 25
+    elif option is 3:
+        original_expression = pandas.read_csv('data/rnn/original/ecoli_5_genes_7_interactions_25_time_series/Ecoli_5_genes_7_interactions_dream4_timeseries.tsv'
+                                              ,sep='\t', header=0)
+        pertubations = pandas.read_csv('data/rnn/original/ecoli_5_genes_7_interactions_25_time_series/Ecoli_5_genes_7_interactions_dream4_timeseries_perturbations.tsv'
+                                              ,sep='\t', header=0)
+        regulators = 4
         num_time_series = 25
+
+    # Genes  = 5, Interactions = 7, TimeSeries  = 50
+    elif option is 4:
+        original_expression = pandas.read_csv('data/rnn/original/ecoli_5_genes_7_interactions_50_time_series/Ecoli_5_genes_7_interactions_dream4_timeseries.tsv'
+                                              ,sep='\t', header=0)
+        pertubations = pandas.read_csv('data/rnn/original/ecoli_5_genes_7_interactions_50_time_series/Ecoli_5_genes_7_interactions_dream4_timeseries_perturbations.tsv'
+                                              ,sep='\t', header=0)
+        regulators = 4
+        num_time_series = 50
+
+    # Genes  = 10, Interactions = 14, TimeSeries  = 25
+    elif option is 5:
+        original_expression = pandas.read_csv('data/rnn/original/ecoli_10_genes_14_interactions_25_time_series/Ecoli_10_genes_14_interactions_dream4_timeseries.tsv'
+                                              ,sep='\t', header=0)
+        pertubations = pandas.read_csv('data/rnn/original/ecoli_10_genes_14_interactions_25_time_series/Ecoli_10_genes_14_interactions_dream4_timeseries_perturbations.tsv'
+                                              ,sep='\t', header=0)
+        regulators = 4
+        num_time_series = 25
+
+    # Genes  = 10, Interactions = 14, TimeSeries  = 50
+    elif option is 6:
+        original_expression = pandas.read_csv('data/rnn/original/ecoli_10_genes_14_interactions_50_time_series/Ecoli_10_genes_14_interactions_dream4_timeseries.tsv'
+                                              ,sep='\t', header=0)
+        pertubations = pandas.read_csv('data/rnn/original/ecoli_10_genes_14_interactions_50_time_series/Ecoli_10_genes_14_interactions_dream4_timeseries_perturbations.tsv'
+                                              ,sep='\t', header=0)
+        regulators = 4
+        num_time_series = 50
+
+    # Genes  = 10, Interactions = 20, TimeSeries  = 25
+    elif option is 7:
+        original_expression = pandas.read_csv('data/rnn/original/ecoli_10_genes_20_interactions_25_time_series/Ecoli_10_genes_20_interactions_dream4_timeseries.tsv'
+                                              ,sep='\t', header=0)
+        pertubations = pandas.read_csv('data/rnn/original/ecoli_10_genes_20_interactions_25_time_series/Ecoli_10_genes_20_interactions_dream4_timeseries_perturbations.tsv'
+                                              ,sep='\t', header=0)
+        regulators = 4
+        num_time_series = 25
+
+    # Genes  = 10, Interactions = 20, TimeSeries  = 50
+    elif option is 8:
+        original_expression = pandas.read_csv('data/rnn/original/ecoli_10_genes_20_interactions_50_time_series/Ecoli_10_genes_20_interactions_dream4_timeseries.tsv'
+                                              ,sep='\t', header=0)
+        pertubations = pandas.read_csv('data/rnn/original/ecoli_10_genes_20_interactions_50_time_series/Ecoli_10_genes_20_interactions_dream4_timeseries_perturbations.tsv'
+                                              ,sep='\t', header=0)
+        regulators = 4
+        num_time_series = 50
+
+    # Genes  = 20, Interactions = 24, TimeSeries  = 25
+    elif option is 9:
+        original_expression = pandas.read_csv('data/rnn/original/ecoli_20_genes_24_interactions_25_time_series/Ecoli_20_genes_24_interactions_dream4_timeseries.tsv'
+                                              ,sep='\t', header=0)
+        pertubations = pandas.read_csv('data/rnn/original/ecoli_20_genes_24_interactions_25_time_series/Ecoli_20_genes_24_interactions_dream4_timeseries_perturbations.tsv'
+                                              ,sep='\t', header=0)
+        regulators = 4
+        num_time_series = 25
+
+    # Genes  = 20, Interactions = 24, TimeSeries  = 50
+    elif option is 10:
+        original_expression = pandas.read_csv('data/rnn/original/ecoli_20_genes_24_interactions_50_time_series/Ecoli_20_genes_24_interactions_dream4_timeseries.tsv'
+                                              ,sep='\t', header=0)
+        pertubations = pandas.read_csv('data/rnn/original/ecoli_20_genes_24_interactions_50_time_series/Ecoli_20_genes_24_interactions_dream4_timeseries_perturbations.tsv'
+                                              ,sep='\t', header=0)
+        regulators = 4
+        num_time_series = 50
+
+
+    # Genes  = 20, Interactions = 35, TimeSeries  = 25
+    elif option is 11:
+        original_expression = pandas.read_csv('data/rnn/original/ecoli_20_genes_35_interactions_25_time_series/Ecoli_20_genes_35_interactions_dream4_timeseries.tsv'
+                                              ,sep='\t', header=0)
+        pertubations = pandas.read_csv('data/rnn/original/ecoli_20_genes_35_interactions_25_time_series/Ecoli_20_genes_35_interactions_dream4_timeseries_perturbations.tsv'
+                                              ,sep='\t', header=0)
+        regulators = 4
+        num_time_series = 25
+
+    # Genes  = 20, Interactions = 35, TimeSeries  = 50
+    elif option is 12:
+        original_expression = pandas.read_csv('data/rnn/original/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_dream4_timeseries.tsv'
+                                              ,sep='\t', header=0)
+        pertubations = pandas.read_csv('data/rnn/original/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_dream4_timeseries_perturbations.tsv'
+                                              ,sep='\t', header=0)
+        regulators = 4
+        num_time_series = 50
 
     original_expression = original_expression.drop('Time',axis=1)
     return (original_expression,regulators,num_time_series,pertubations)
@@ -43,22 +137,27 @@ def extract_training_data(original_expression, num_time_series,time_points_per_s
     return dataframe
 
 
-def extract_testing_data(original_expression, num_time_series,time_points_per_series):
+def extract_testing_data(original_expression, num_time_series, time_points_per_series, pertubations):
     if num_time_series == 25:
-        data_size = 2 * time_points_per_series
+        testing_data_size = 2 * time_points_per_series
+        pertubation_data_size = 2
     else:
-        data_size = 4 * time_points_per_series
+        testing_data_size = 4 * time_points_per_series
+        pertubation_data_size = 4
 
-    dataframe = original_expression.tail(int(data_size))
-    dataframe = dataframe.T
-    return dataframe
+    testing_dataframe = original_expression.tail(int(testing_data_size))
+    testing_dataframe = testing_dataframe.T
+
+    pertubation_data_frame = pertubations.tail(int(pertubation_data_size)).T
+
+    return testing_dataframe,pertubation_data_frame
 
 
 def load_gene_list(expression_data):
     return list(expression_data.columns.values)[:]
 
 
-def train_grn(grn, training_data, maxiter, pertubations):
+def train_grn(grn, training_data, maxiter):
     weight_matrix = nx.to_numpy_matrix(grn.graph)
     bias_matrix = grn.bias[:]
     gene_list = grn.genes
@@ -67,15 +166,16 @@ def train_grn(grn, training_data, maxiter, pertubations):
     training_data_count = training_data.columns.values.size
 
     # skip the first column, as we plan to use it later to feed into the first layer
-    timestep_index = 1
+    time_index = 1
 
     hidden_state_matrix = np.random.rand(gene_count,1)
     combined_weight_matrix = build_combined_weight_matrix(weight_matrix)
 
     # loop over the training data
-    while timestep_index < training_data_count:
-        training_column = training_data.iloc[:,timestep_index].values
-        prev_training_column = training_data.iloc[:,timestep_index-1].values
+    while time_index < training_data_count:
+
+        training_column = training_data.iloc[:,time_index].values
+        prev_training_column = training_data.iloc[:,time_index-1].values
 
         training_column_size = training_column.size
 
@@ -92,6 +192,7 @@ def train_grn(grn, training_data, maxiter, pertubations):
 
         # combine the input with forget gate to get the actual input
         transformed_input_matrix = np.multiply(input_matrix, forget_matrix)
+
 
         # loop over the genes
         while target_gene_index < training_column_size:
@@ -188,7 +289,7 @@ def train_grn(grn, training_data, maxiter, pertubations):
             target_gene_index = target_gene_index + 1
 
         # update the invariant
-        timestep_index = timestep_index + 1
+        time_index = time_index + 1
 
         # update the output that will be passed to new layer
         output_matrix = output_gate_layer(hidden_state_matrix, transformed_input_matrix, combined_weight_matrix,
@@ -326,7 +427,8 @@ class Particle:
             self.best_error = self.current_error
 
 
-def predict_expression(trained_grn,previous_expression_values,timepoints_to_predict):
+def predict_expression(trained_grn, testing_expression,pertubations):
+    timepoint_count = testing_expression.shape[1]
 
     # get the weights
     weight_matrix = nx.to_numpy_array(trained_grn.graph)
@@ -337,7 +439,7 @@ def predict_expression(trained_grn,previous_expression_values,timepoints_to_pred
     # matrix to hold the predicted values
     gene_count = len(trained_grn.genes)
     gene_labels = pandas.Series(trained_grn.genes)
-    predicted_expression_matrix = pandas.DataFrame(np.zeros((len(trained_grn.genes),timepoints_to_predict)),index=gene_labels)
+    predicted_expression_matrix = pandas.DataFrame(np.zeros((len(trained_grn.genes),timepoint_count)),index=gene_labels)
 
     hidden_state_matrix = trained_grn.hidden_state_matrix
 
@@ -346,84 +448,128 @@ def predict_expression(trained_grn,previous_expression_values,timepoints_to_pred
     # the expression for previous time point
     expr_for_prev_timepoint = None
 
+    #timeseries index
+    timeseries_index = 0
+    row_in_time_series = 0
+    current_pertubation = None
     # start looping to predict the values
-    for timepoint_index in range(0,timepoints_to_predict):
+    for timepoint_index in range(0,timepoint_count):
 
-        # matrix to hold expression for current time point
-        expr_for_curr_timepoint = np.empty((gene_count,1))
+        # if at the first row
+        if timepoint_index == 0 or timepoint_index % 21 == 0:
+            current_pertubation = np.transpose(pertubations.iloc[:, timeseries_index].values)
+
+            # reset the row in time series since we started a new time series
+            row_in_time_series = 0
+
+            # if at the start of time series then we don't predict, just use the first row
+            expr_for_curr_timepoint =  np.transpose(testing_expression.iloc[:,timepoint_index].values)
 
 
-        # if first time point then we use previous expression values
-        if timepoint_index == 0:
-            # if first then use previous expression values
-            expr_for_prev_timepoint = previous_expression_values[len(previous_expression_values) - 1].as_matrix()
+            # add the current matrix to predicted expression matrix
+            for gene_index in range(0, len(gene_labels)):
+                predicted_expression_matrix.iat[gene_index, timepoint_index] = expr_for_curr_timepoint[gene_index]
+
+            # save the current expression to be passed in next time step
+            expr_for_prev_timepoint = expr_for_curr_timepoint
+
+             # decide what to forget from previous state
+            forget_matrix = forget_gate_layer(hidden_state_matrix, expr_for_prev_timepoint,combined_weight_matrix,bias_matrix)
+
+            # pass the input thru input gate layer
+            input_matrix = input_gate_layer(hidden_state_matrix,expr_for_prev_timepoint,combined_weight_matrix,bias_matrix)
+
+            # combine the input with forget gate to get the actual input
+            transformed_input_matrix = np.multiply(input_matrix,forget_matrix)
+
+            # update the output that will be passed to new layer
+            output_matrix = output_gate_layer(hidden_state_matrix, transformed_input_matrix, combined_weight_matrix,
+                                              bias_matrix)
+
+            hidden_state_matrix = output_matrix
 
 
-        # decide what to forget from previous state
-        forget_matrix = forget_gate_layer(hidden_state_matrix, expr_for_prev_timepoint,combined_weight_matrix,bias_matrix)
+            timeseries_index = timeseries_index + 1
 
-        # pass the input thru input gate layer
-        input_matrix = input_gate_layer(hidden_state_matrix,expr_for_prev_timepoint,combined_weight_matrix,bias_matrix)
+        else:
+            # matrix to hold expression for current time point
+            expr_for_curr_timepoint = np.empty((gene_count,1))
 
-        # combine the input with forget gate to get the actual input
-        transformed_input_matrix = np.multiply(input_matrix,forget_matrix)
+            # if we are first half of time series
+            if row_in_time_series < 11:
+                # apply pertubation
+                for i in range(0,len(current_pertubation)):
+                    expr_for_prev_timepoint[i] = expr_for_prev_timepoint[i] + current_pertubation[i]
 
-        # start looping over the genes
-        for target_gene_index in range(0,gene_count):
+            # decide what to forget from previous state
+            forget_matrix = forget_gate_layer(hidden_state_matrix, expr_for_prev_timepoint,combined_weight_matrix,bias_matrix)
 
-            # get the target gene
-            target_gene = trained_grn.genes[target_gene_index]
+            # pass the input thru input gate layer
+            input_matrix = input_gate_layer(hidden_state_matrix,expr_for_prev_timepoint,combined_weight_matrix,bias_matrix)
 
-            # get the peak expression
-            peak_expression = trained_grn.peak_expression_level[target_gene_index]
+            # combine the input with forget gate to get the actual input
+            transformed_input_matrix = np.multiply(input_matrix,forget_matrix)
 
-            # get the degradation constant
-            degradation_constant = trained_grn.degradation_constant[target_gene_index]
+            # start looping over the genes
+            for target_gene_index in range(0,gene_count):
 
-            # get the regulators
-            regulator_genes = trained_grn.get_regulators(target_gene)
+                # get the target gene
+                target_gene = trained_grn.genes[target_gene_index]
 
-            # loop over the regulators to calculate the expression from each regulator
-            total_expression = 0
-            for regulator_index in range(0,len(regulator_genes)):
+                # get the peak expression
+                peak_expression = trained_grn.peak_expression_level[target_gene_index]
 
-                # get the regulator gene
-                regulator_gene = regulator_genes[regulator_index]
+                # get the degradation constant
+                degradation_constant = trained_grn.degradation_constant[target_gene_index]
 
-                # get the original regulator index
-                regulator_og_index = trained_grn.genes.index(regulator_gene)
+                # get the regulators
+                regulator_genes = trained_grn.get_regulators(target_gene)
 
-                # get the previous expression values
-                regulator_prev_expression_value = transformed_input_matrix[regulator_og_index]
+                # loop over the regulators to calculate the expression from each regulator
+                total_expression = 0
+                for regulator_index in range(0,len(regulator_genes)):
 
-                # get the weight
-                weight = weight_matrix[target_gene_index,regulator_og_index]
+                    # get the regulator gene
+                    regulator_gene = regulator_genes[regulator_index]
 
-                # get the bias
-                bias = trained_grn.bias[regulator_og_index]
+                    # get the original regulator index
+                    regulator_og_index = trained_grn.genes.index(regulator_gene)
 
-                # calculate the expression
-                expression = weight*regulator_prev_expression_value + bias
+                    # get the previous expression values
+                    regulator_prev_expression_value = transformed_input_matrix[regulator_og_index]
 
-                total_expression = total_expression + expression
+                    # get the weight
+                    weight = weight_matrix[target_gene_index,regulator_og_index]
 
-            # apply a sigmoid function to total expression
-            target_gene_expression = (peak_expression * sigmoid(total_expression) - degradation_constant)
+                    # get the bias
+                    bias = trained_grn.bias[regulator_og_index]
 
-            # add the target gene expression to the matrix for current timepoint
-            expr_for_curr_timepoint[target_gene_index] = target_gene_expression
+                    # calculate the expression
+                    expression = weight*regulator_prev_expression_value + bias
 
-        # add the current matrix to predicted expression matrix
-        for gene_index in range(0,len(gene_labels)):
-            predicted_expression_matrix.iat[gene_index,timepoint_index] = expr_for_curr_timepoint[gene_index]
+                    total_expression = total_expression + expression
 
-        # save the current expression to be passed in next time step
-        expr_for_prev_timepoint = expr_for_curr_timepoint
+                # apply a sigmoid function to total expression
+                target_gene_expression = (peak_expression * sigmoid(total_expression) - degradation_constant)
 
-        # update the output that will be passed to new layer
-        output_matrix = output_gate_layer(hidden_state_matrix,transformed_input_matrix,combined_weight_matrix,bias_matrix)
+                # add the target gene expression to the matrix for current timepoint
+                expr_for_curr_timepoint[target_gene_index] = target_gene_expression
 
-        hidden_state_matrix = output_matrix
+            # add the current matrix to predicted expression matrix
+            for gene_index in range(0,len(gene_labels)):
+                predicted_expression_matrix.iat[gene_index,timepoint_index] = expr_for_curr_timepoint[gene_index]
+
+            # save the current expression to be passed in next time step
+            expr_for_prev_timepoint = expr_for_curr_timepoint
+
+            # update the output that will be passed to new layer
+            output_matrix = output_gate_layer(hidden_state_matrix,transformed_input_matrix,combined_weight_matrix,bias_matrix)
+
+            # update the hidden state
+            hidden_state_matrix = output_matrix
+
+            # update the row in time series
+            row_in_time_series = row_in_time_series + 1
 
     return predicted_expression_matrix
 
@@ -586,9 +732,63 @@ class TrainingConfig:
         self.maxiter = maxiter
         self.pertubation = pertubations
 
+class SelectedOptions:
+
+    def __init__(self,option,grn_space_size,maxiter):
+        self.option = option
+        self.grn_space = grn_space_size
+        self.maxiter = maxiter
+
 
 def get_path_to_save(option):
     if option is 1:
         return 'data/rnn/predicted/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_output.txt'
     elif option is 2:
         return 'data/rnn/predicted/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_output.txt'
+    elif option is 3:
+        return 'data/rnn/predicted/ecoli_5_genes_7_interactions_25_time_series/Ecoli_5_genes_7_interactions_dream4_output.txt'
+    elif option is 4:
+        return 'data/rnn/predicted/ecoli_5_genes_7_interactions_50_time_series/Ecoli_5_genes_7_interactions_dream4_output.txt'
+    elif option is 5:
+        return 'data/rnn/predicted/ecoli_10_genes_14_interactions_25_time_series/Ecoli_10_genes_14_interactions_dream4_output.txt'
+    elif option is 6:
+        return 'data/rnn/predicted/ecoli_10_genes_14_interactions_50_time_series/Ecoli_10_genes_14_interactions_dream4_output.txt'
+    elif option is 7:
+        return 'data/rnn/predicted/ecoli_10_genes_20_interactions_25_time_series/Ecoli_10_genes_20_interactions_dream4_output.txt'
+    elif option is 8:
+        return 'data/rnn/predicted/ecoli_10_genes_20_interactions_50_time_series/Ecoli_10_genes_20_interactions_dream4_output.txt'
+    elif option is 9:
+        return 'data/rnn/predicted/ecoli_20_genes_24_interactions_25_time_series/Ecoli_20_genes_24_interactions_dream4_output.txt'
+    elif option is 10:
+        return 'data/rnn/predicted/ecoli_20_genes_24_interactions_50_time_series/Ecoli_20_genes_24_interactions_dream4_output.txt'
+    elif option is 11:
+        return 'data/rnn/predicted/ecoli_20_genes_35_interactions_25_time_series/Ecoli_20_genes_35_interactions_dream4_output.txt'
+    elif option is 12:
+        return 'data/rnn/predicted/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_dream4_output.txt'
+
+
+def get_path_to_save_mse(option):
+    if option is 1:
+        return 'data/rnn/predicted/ecoli_5_genes_4_interactions_25_time_series/mse.txt'
+    elif option is 2:
+        return 'data/rnn/predicted/ecoli_5_genes_4_interactions_50_time_series/mse.txt'
+    elif option is 3:
+        return 'data/rnn/predicted/ecoli_5_genes_7_interactions_25_time_series/mse.txt'
+    elif option is 4:
+        return 'data/rnn/predicted/ecoli_5_genes_7_interactions_50_time_series/mse.txt'
+    elif option is 5:
+        return 'data/rnn/predicted/ecoli_10_genes_14_interactions_25_time_series/mse.txt'
+    elif option is 6:
+        return 'data/rnn/predicted/ecoli_10_genes_14_interactions_50_time_series/mse.txt'
+    elif option is 7:
+        return 'data/rnn/predicted/ecoli_10_genes_20_interactions_25_time_series/mse.txt'
+    elif option is 8:
+        return 'data/rnn/predicted/ecoli_10_genes_20_interactions_50_time_series/mse.txt'
+    elif option is 9:
+        return 'data/rnn/predicted/ecoli_20_genes_24_interactions_25_time_series/mse.txt'
+    elif option is 10:
+        return 'data/rnn/predicted/ecoli_20_genes_24_interactions_50_time_series/mse.txt'
+    elif option is 11:
+        return 'data/rnn/predicted/ecoli_20_genes_35_interactions_25_time_series/mse.txt'
+    elif option is 12:
+        return 'data/rnn/predicted/ecoli_20_genes_35_interactions_50_time_series/mse.txt'
