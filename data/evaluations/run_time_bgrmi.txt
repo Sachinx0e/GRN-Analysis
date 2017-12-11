@@ -1,0 +1,35 @@
+1. Ecoli 5 genes 2 regulators 4 interactions 25 timepoints
+0.024732 seconds
+
+2. Ecoli 5 genes 2 regulators 4 interactions 50 timepoints
+0.025691 seconds.
+
+3. Ecoli 5 genes 2 regulators 7 interactions 25 timepoints
+0.025691 seconds.
+
+4. Ecoli 5 genes 2 regulators 7 interactions 50 timepoints
+0.032608 seconds
+
+5. Ecoli 10 genes 4 regulators 14 interactions 25 timepoints
+0.108626 seconds
+
+6. Ecoli 10 genes 4 regulators 14 interactions 50 timepoints
+0.112734 seconds
+
+7. Ecoli 10 genes 4 regulators 20 interactions 25 timepoints
+0.113212 seconds.
+
+8. Ecoli 10 genes 4 regulators 20 interactions 50 timepoints
+0.097219 seconds
+
+9. Ecoli 20 genes 4 regulators 24 interactions 25 timepoints
+0.744648 seconds
+
+10. Ecoli 20 genes 4 regulators 24 interactions 50 timepoints
+0.769605 seconds
+
+11. Ecoli 20 genes 4 regulators 35 interactions 25 timepoints
+0.860617
+
+12. Ecoli 20 genes 4 regulators 35 interactions 50 timepoints
+0.691776

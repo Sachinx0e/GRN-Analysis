@@ -742,53 +742,53 @@ class SelectedOptions:
 
 def get_path_to_save(option):
     if option is 1:
-        return 'data/rnn/predicted/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_output.txt'
+        return 'data/rnn/predicted/ecoli_5_genes_4_interactions_25_time_series_dream4_output.txt'
     elif option is 2:
-        return 'data/rnn/predicted/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_output.txt'
+        return 'data/rnn/predicted/ecoli_5_genes_4_interactions_50_time_series_dream4_output.txt'
     elif option is 3:
-        return 'data/rnn/predicted/ecoli_5_genes_7_interactions_25_time_series/Ecoli_5_genes_7_interactions_dream4_output.txt'
+        return 'data/rnn/predicted/ecoli_5_genes_7_interactions_25_time_series_dream4_output.txt'
     elif option is 4:
-        return 'data/rnn/predicted/ecoli_5_genes_7_interactions_50_time_series/Ecoli_5_genes_7_interactions_dream4_output.txt'
+        return 'data/rnn/predicted/ecoli_5_genes_7_interactions_50_time_series_dream4_output.txt'
     elif option is 5:
-        return 'data/rnn/predicted/ecoli_10_genes_14_interactions_25_time_series/Ecoli_10_genes_14_interactions_dream4_output.txt'
+        return 'data/rnn/predicted/ecoli_10_genes_14_interactions_25_time_series_dream4_output.txt'
     elif option is 6:
-        return 'data/rnn/predicted/ecoli_10_genes_14_interactions_50_time_series/Ecoli_10_genes_14_interactions_dream4_output.txt'
+        return 'data/rnn/predicted/ecoli_10_genes_14_interactions_50_time_series_dream4_output.txt'
     elif option is 7:
-        return 'data/rnn/predicted/ecoli_10_genes_20_interactions_25_time_series/Ecoli_10_genes_20_interactions_dream4_output.txt'
+        return 'data/rnn/predicted/ecoli_10_genes_20_interactions_25_time_series_dream4_output.txt'
     elif option is 8:
-        return 'data/rnn/predicted/ecoli_10_genes_20_interactions_50_time_series/Ecoli_10_genes_20_interactions_dream4_output.txt'
+        return 'data/rnn/predicted/ecoli_10_genes_20_interactions_50_time_series_dream4_output.txt'
     elif option is 9:
-        return 'data/rnn/predicted/ecoli_20_genes_24_interactions_25_time_series/Ecoli_20_genes_24_interactions_dream4_output.txt'
+        return 'data/rnn/predicted/ecoli_20_genes_24_interactions_25_time_series_dream4_output.txt'
     elif option is 10:
-        return 'data/rnn/predicted/ecoli_20_genes_24_interactions_50_time_series/Ecoli_20_genes_24_interactions_dream4_output.txt'
+        return 'data/rnn/predicted/ecoli_20_genes_24_interactions_50_time_series_dream4_output.txt'
     elif option is 11:
-        return 'data/rnn/predicted/ecoli_20_genes_35_interactions_25_time_series/Ecoli_20_genes_35_interactions_dream4_output.txt'
+        return 'data/rnn/predicted/ecoli_20_genes_35_interactions_25_time_series_dream4_output.txt'
     elif option is 12:
-        return 'data/rnn/predicted/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_dream4_output.txt'
+        return 'data/rnn/predicted/ecoli_20_genes_35_interactions_50_time_series_dream4_output.txt'
 
 
 def get_path_to_save_mse(option):
     if option is 1:
-        return 'data/rnn/predicted/ecoli_5_genes_4_interactions_25_time_series/mse.txt'
+        return 'data/rnn/predicted/mse_ecoli_5_genes_4_interactions_25_time_series.txt'
     elif option is 2:
-        return 'data/rnn/predicted/ecoli_5_genes_4_interactions_50_time_series/mse.txt'
+        return 'data/rnn/predicted/mse_ecoli_5_genes_4_interactions_50_time_series.txt'
     elif option is 3:
-        return 'data/rnn/predicted/ecoli_5_genes_7_interactions_25_time_series/mse.txt'
+        return 'data/rnn/predicted/mse_ecoli_5_genes_7_interactions_25_time_series.txt'
     elif option is 4:
-        return 'data/rnn/predicted/ecoli_5_genes_7_interactions_50_time_series/mse.txt'
+        return 'data/rnn/predicted/mse_ecoli_5_genes_7_interactions_50_time_series.txt'
     elif option is 5:
-        return 'data/rnn/predicted/ecoli_10_genes_14_interactions_25_time_series/mse.txt'
+        return 'data/rnn/predicted/mse_ecoli_10_genes_14_interactions_25_time_series.txt'
     elif option is 6:
-        return 'data/rnn/predicted/ecoli_10_genes_14_interactions_50_time_series/mse.txt'
+        return 'data/rnn/predicted/mse_ecoli_10_genes_14_interactions_50_time_series.txt'
     elif option is 7:
-        return 'data/rnn/predicted/ecoli_10_genes_20_interactions_25_time_series/mse.txt'
+        return 'data/rnn/predicted/mse_ecoli_10_genes_20_interactions_25_time_series.txt'
     elif option is 8:
-        return 'data/rnn/predicted/ecoli_10_genes_20_interactions_50_time_series/mse.txt'
+        return 'data/rnn/predicted/mse_ecoli_10_genes_20_interactions_50_time_series.txt'
     elif option is 9:
-        return 'data/rnn/predicted/ecoli_20_genes_24_interactions_25_time_series/mse.txt'
+        return 'data/rnn/predicted/mse_ecoli_20_genes_24_interactions_25_time_series.txt'
     elif option is 10:
-        return 'data/rnn/predicted/ecoli_20_genes_24_interactions_50_time_series/mse.txt'
+        return 'data/rnn/predicted/mse_ecoli_20_genes_24_interactions_50_time_series.txt'
     elif option is 11:
-        return 'data/rnn/predicted/ecoli_20_genes_35_interactions_25_time_series/mse.txt'
+        return 'data/rnn/predicted/mse_ecoli_20_genes_35_interactions_25_time_series.txt'
     elif option is 12:
-        return 'data/rnn/predicted/ecoli_20_genes_35_interactions_50_time_series/mse.txt'
+        return 'data/rnn/predicted/mse_ecoli_20_genes_35_interactions_50_time_series.txt'

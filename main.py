@@ -177,7 +177,7 @@ if __name__ == "__main__":
     if selected_options.option != 13 :
         run_with_option(selected_options)
     else:
-        for i in range(1,12):
+        for i in range(1,13):
             selected_options.option = i
             run_with_option(selected_options)
 

@@ -2,12 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6777640-aa1e-461d-90bf-431c392d723b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/BGMRI/~$Manual.docx" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_adjacency.tsv" afterPath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_adjacency.tsv" />
-      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_ouput.txt" afterPath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_ouput.txt" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_10_genes_14_interactions_25_time_series/Ecoli_10_genes_14_interactions_dream4_adjacency.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_10_genes_14_interactions_25_time_series/Ecoli_10_genes_14_interactions_dream4_ouput.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_10_genes_14_interactions_50_time_series/Ecoli_10_genes_14_interactions_dream4_adjacency.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_10_genes_14_interactions_50_time_series/Ecoli_10_genes_14_interactions_dream4_ouput.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_10_genes_20_interactions_25_time_series/Ecoli_10_genes_20_interactions_dream4_adjacency.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_10_genes_20_interactions_25_time_series/Ecoli_10_genes_20_interactions_dream4_ouput.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_10_genes_20_interactions_50_time_series/Ecoli_10_genes_20_interactions_dream4_adjacency.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_10_genes_20_interactions_50_time_series/Ecoli_10_genes_20_interactions_dream4_ouput.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_24_interactions_25_time_series/Ecoli_20_genes_24_interactions_dream4_adjacency.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_24_interactions_25_time_series/Ecoli_20_genes_24_interactions_dream4_ouput.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_24_interactions_50_time_series/Ecoli_20_genes_24_interactions_dream4_adjacency.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_24_interactions_50_time_series/Ecoli_20_genes_24_interactions_dream4_ouput.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_35_interactions_25_time_series/Ecoli_20_genes_35_interactions_dream4_adjacency.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_35_interactions_25_time_series/Ecoli_20_genes_35_interactions_dream4_ouput.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_dream4_adjacency.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_dream4_ouput.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_goldstandard_signed.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_noexpnoise_proteins_wildtype.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_nonoise_proteins_dream4_timeseries.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_nonoise_proteins_wildtype.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_normalization_constant.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_wildtype.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_adjacency.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_ouput.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_adjacency.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_ouput.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_5_genes_7_interactions_25_time_series/Ecoli_5_genes_7_interactions_dream4_adjacency.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_5_genes_7_interactions_25_time_series/Ecoli_5_genes_7_interactions_dream4_ouput.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_5_genes_7_interactions_50_time_series/Ecoli_5_genes_7_interactions_dream4_adjacency.tsv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/bgrmi/predicted/ecoli_5_genes_7_interactions_50_time_series/Ecoli_5_genes_7_interactions_dream4_ouput.txt" afterPath="" />
       <change beforePath="$PROJECT_DIR$/data/gnw_desktop.zip" afterPath="$PROJECT_DIR$/data/gnw_desktop.zip" />
-      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_output.txt" afterPath="$PROJECT_DIR$/data/rnn/predicted/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_output.txt" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_10_genes_14_interactions_25_time_series/Ecoli_10_genes_14_interactions_dream4_output.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_10_genes_14_interactions_25_time_series/mse.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_10_genes_14_interactions_50_time_series/Ecoli_10_genes_14_interactions_dream4_output.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_10_genes_14_interactions_50_time_series/mse.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_10_genes_20_interactions_25_time_series/Ecoli_10_genes_20_interactions_dream4_output.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_10_genes_20_interactions_25_time_series/mse.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_10_genes_20_interactions_50_time_series/Ecoli_10_genes_20_interactions_dream4_output.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_10_genes_20_interactions_50_time_series/mse.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_20_genes_24_interactions_25_time_series/Ecoli_20_genes_24_interactions_dream4_output.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_20_genes_24_interactions_25_time_series/mse.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_20_genes_24_interactions_50_time_series/Ecoli_20_genes_24_interactions_dream4_output.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_20_genes_24_interactions_50_time_series/mse.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_20_genes_35_interactions_25_time_series/Ecoli_20_genes_35_interactions_dream4_output.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_20_genes_35_interactions_25_time_series/mse.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_20_genes_35_interactions_50_time_series/Ecoli_20_genes_35_interactions_dream4_output.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_20_genes_35_interactions_50_time_series/mse.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_5_genes_4_interactions_25_time_series/Ecoli_5_genes_4_interactions_dream4_output.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_5_genes_4_interactions_25_time_series/mse.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_5_genes_4_interactions_50_time_series/Ecoli_5_genes_4_interactions_dream4_output.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_5_genes_4_interactions_50_time_series/mse.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_5_genes_7_interactions_25_time_series/Ecoli_5_genes_7_interactions_dream4_output.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_5_genes_7_interactions_25_time_series/mse.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_5_genes_7_interactions_50_time_series/Ecoli_5_genes_7_interactions_dream4_output.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/data/rnn/predicted/ecoli_5_genes_7_interactions_50_time_series/mse.txt" afterPath="" />
       <change beforePath="$PROJECT_DIR$/main.m" afterPath="$PROJECT_DIR$/main.m" />
       <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
       <change beforePath="$PROJECT_DIR$/postprocess_bgrmi.py" afterPath="$PROJECT_DIR$/postprocess_bgrmi.py" />
@@ -22,11 +72,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="161" column="22" lean-forward="true" selection-start-line="161" selection-start-column="22" selection-end-line="161" selection-end-column="22" />
+            <state relative-caret-position="372">
+              <caret line="115" column="18" lean-forward="false" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -34,51 +84,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activate" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Scripts/activate">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="77" column="2" lean-forward="false" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activate.bat" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Scripts/activate.bat">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pyplot.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/matplotlib/pyplot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8007">
-              <caret line="522" column="0" lean-forward="false" selection-start-line="522" selection-start-column="0" selection-end-line="522" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12495">
-              <caret line="739" column="30" lean-forward="false" selection-start-line="739" selection-start-column="30" selection-end-line="739" selection-end-column="30" />
+            <state relative-caret-position="410">
+              <caret line="762" column="99" lean-forward="false" selection-start-line="762" selection-start-column="99" selection-end-line="762" selection-end-column="99" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="postprocess_bgrmi.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/postprocess_bgrmi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2108">
+              <caret line="124" column="101" lean-forward="false" selection-start-line="124" selection-start-column="101" selection-end-line="124" selection-end-column="101" />
               <folding />
             </state>
           </provider>
@@ -108,19 +128,19 @@
         <option value="$PROJECT_DIR$/venv/util.py" />
         <option value="$PROJECT_DIR$/data/predicted/ecoli_10_4/Ecoli_subnet_10_4-1_ouput.txt" />
         <option value="$PROJECT_DIR$/post_process_bgrmi.py" />
-        <option value="$PROJECT_DIR$/postprocess_bgrmi.py" />
-        <option value="$PROJECT_DIR$/util.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/venv/Scripts/activate" />
         <option value="$PROJECT_DIR$/venv/Scripts/activate.bat" />
         <option value="$PROJECT_DIR$/venv/Scripts/activate.ps1" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/util.py" />
+        <option value="$PROJECT_DIR$/postprocess_bgrmi.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1706" />
-    <option name="width" value="1743" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1713" />
+    <option name="width" value="1734" />
     <option name="height" value="1407" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -185,7 +205,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.postprocess_bgrmi">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -228,8 +248,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.postprocess_bgrmi" />
+        <item index="0" class="java.lang.String" itemvalue="Python.postprocess_bgrmi" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -250,18 +270,19 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="3456" height="1416" extended-state="6" />
+    <frame x="1713" y="0" width="1734" height="1407" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.117732555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23573923" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896763" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921174" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5007704" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28538638" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28538638" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31587058" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -271,7 +292,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998455" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35958487" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35958487" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -470,21 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/postprocess_bgrmi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="58" lean-forward="true" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12495">
-          <caret line="739" column="30" lean-forward="false" selection-start-line="739" selection-start-column="30" selection-end-line="739" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8007">
@@ -500,14 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Scripts/activate">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1309">
-          <caret line="77" column="2" lean-forward="false" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Scripts/activate.ps1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="991">
@@ -518,7 +516,7 @@
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <caret line="12" column="12" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -531,13 +529,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Scripts/activate">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="77" column="2" lean-forward="false" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="161" column="22" lean-forward="true" selection-start-line="161" selection-start-column="22" selection-end-line="161" selection-end-column="22" />
+        <state relative-caret-position="372">
+          <caret line="115" column="18" lean-forward="false" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="762" column="99" lean-forward="false" selection-start-line="762" selection-start-column="99" selection-end-line="762" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/postprocess_bgrmi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="124" column="101" lean-forward="false" selection-start-line="124" selection-start-column="101" selection-end-line="124" selection-end-column="101" />
+          <folding />
         </state>
       </provider>
     </entry>

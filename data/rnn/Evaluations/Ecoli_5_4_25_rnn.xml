@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<GNW_analysis>
+<param name="version">3.1.2 Beta</param>
+<param name="author">Sachin Gavali</param>
+<param name="maxDivergence">0.3</param>
+<param name="date">Mon Dec 11 01:04:24 EST 2017</param>
+<param name="processid">Ecoli_5_4_25_rnn</param>
+<param name="note"></param>
+<param name="plots">false</param>
+<param name="pr">true</param>
+<param name="roc">true</param>
+<param name="motifAnalysis">false</param>
+<param name="numTabs">1</param>
+<param name="openReport">false</param>
+<param name="figuresArchive">false</param>
+<param name="significanceLevel">0.01</param>
+<param name="useBonferroni">true</param><param name="num_predictions_per_tab">1 </param>
+	 <PR name="RNN-BAPSO" >
+		 <goldstandard name="Ecoli_5_genes_4_interactions" prediction="Ecoli_5_genes_4_interactions_dream4_output.txt" AUPR="0.2837755769345267">
+0,0 0,0.0 0.0,0.0 0.25,0.33 0.5,0.5 0.5,0.4 0.5,0.33 0.5,0.29 0.5,0.25 0.5,0.22 0.75,0.3 0.75,0.27 0.75,0.25 0.75,0.23 1.0,0.29 1.0,0.27 1.0,0.25 1.0,0.24 1.0,0.22 1.0,0.21 1.0,0.2  1,0
+		 </goldstandard>
+	 </PR>
+	 <ROC name="RNN-BAPSO">
+		 <goldstandard name="Ecoli_5_genes_4_interactions" prediction="Ecoli_5_genes_4_interactions_dream4_output.txt" AUROC="0.671875">
+0,0 0.06,0.0 0.12,0.0 0.12,0.25 0.12,0.5 0.19,0.5 0.25,0.5 0.31,0.5 0.38,0.5 0.44,0.5 0.44,0.75 0.5,0.75 0.56,0.75 0.62,0.75 0.62,1.0 0.69,1.0 0.75,1.0 0.81,1.0 0.88,1.0 0.94,1.0 1.0,1.0 1,1.0 1,0
+		 </goldstandard>
+	 </ROC>
+</GNW_analysis>
